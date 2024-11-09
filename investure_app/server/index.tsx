@@ -1,24 +1,23 @@
 const express = require("express")
 
-const xlsx = require("xlsx")
 const fileUpload = require("express-fileupload")
-const processFileUpload = require("./filehandler")
-const calculateTotalReturns = require("./calculations")
+const processUploadedFile = require("./filehandler")
+const calculateTotalReturns = require("./calculations");
 
 const PORT = process.env.PORT || 5001;
 
 const app = express()
 
-const inMemoryDataStore = {}
+const inMemoryDataStore:{[ key : string]: number} = {}
 
 
 //Middleware to convert file into computer readable data
-app.use(fileUpload({ limits: { fileSize: 100 * 10024 * 10024 } }));
+app.use(fileUpload({ limits: { fileSize: 10 * 1024 * 1024 } }));
 
 app.post('/upload', (req,res) => {
     try {
         if(req.files && req.files.file) {
-            processFileUpload(req.files.file, inMemoryDataStore)
+            processUploadedFile(req.files.file, inMemoryDataStore)
             res.status(200).json({message: 'File uploaded and data stored successfully'});
 
         }
