@@ -1,6 +1,6 @@
 const xlsx = require("xlsx")
 
-const processFileUpload = (file,dataStore) => {
+const processFileUpload = (file: any, dataStore: Object) => {
 
     const workbook = xlsx.read(file.data, {type: "buffer"})
     const sheetNames = workbook.SheetNames[0]
