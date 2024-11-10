@@ -30,16 +30,33 @@ function ChartComponent( {ReturnsData} : {ReturnsData: totalReturns[]} ){
             fill: boolean,
         }[]
     }>({
-        labels: ["M","T","W","T","F","S","S"],
+        labels: [],
         datasets: [
         {
             label: 'Cumulative Return',
-            data: [1,2,3,4,5,6,7],
+            data: [],
             borderColor: 'rgba(75, 192, 192, 1)',
             backgroundColor: 'rgba(75, 192, 192, 0.2)',
             fill: true,
        },
     ],
+    })
+
+    useEffect( () => {
+        const refDate = ReturnsData.map( (item) => item.ReferenceDate)
+        const cumulativeRets = ReturnsData.map( (item) => item.CumulativeReturn )
+
+        setChartData({
+            labels: refDate,
+            datasets: [{
+                label:'Cumulative Return',
+                data: cumulativeRets,
+                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                fill: true,
+
+            }],
+        })
     })
 
 
