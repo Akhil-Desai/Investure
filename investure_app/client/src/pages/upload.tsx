@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { uploadFile } from '../services/api'
+import { uploadFile } from '../services/API'
 
 
 function FileUploadPage() {
