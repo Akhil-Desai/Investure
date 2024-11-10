@@ -14,3 +14,13 @@ export const uploadFile = async(file: any) => {
         throw error;
     }
 }
+
+export const fetchTotalReturns = async() => {
+    try {
+        const fetchedData = await axios.get(`${API_BASE_URL}/getTotalReturns`)
+        return fetchedData
+    } catch (error) {
+        console.log("error fetching data", error)
+        throw error
+    }
+}
