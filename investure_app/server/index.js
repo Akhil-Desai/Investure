@@ -1,4 +1,5 @@
 const express = require("express")
+const cors = require("cors")
 
 const fileUpload = require("express-fileupload")
 const processUploadedFile = require("./filehandler")
@@ -8,13 +9,13 @@ const PORT = process.env.PORT || 5001;
 
 const app = express()
 
-const inMemoryDataStore:{[ key : string]: number} = {}
+const inMemoryDataStore = {}
 
 
-//Middleware to convert file into computer readable data
-app.use(fileUpload({ limits: { fileSize: 10 * 1024 * 1024 } }));
+app.use(cors({origin: "http://localhost:3000"}));
 
-app.post('/upload', (req,res) => {
+
+app.post('/upload',fileUpload({ limits: { fileSize: 10 * 1024 * 1024 } }), (req,res) => {
     try {
         if(req.files && req.files.file) {
             processUploadedFile(req.files.file, inMemoryDataStore)

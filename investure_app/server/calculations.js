@@ -1,8 +1,8 @@
-const calculateTR = (dataStore: Object) => {
+const calculateTR = (dataStore) => {
     let cumulativeReturn = 0
-    const cumulativeReturns: { ReferenceDate: string; CumulativeReturn: number }[] = []
+    const cumulativeReturns = []
 
-    Object.entries(dataStore).forEach(([key, value] : [string, number]) => {
+    Object.entries(dataStore).forEach(([key, value]) => {
         cumulativeReturn = (1 + value / 100) * (1 + cumulativeReturn) - 1;
         cumulativeReturns.push({ ReferenceDate: key, CumulativeReturn: cumulativeReturn });
      });
