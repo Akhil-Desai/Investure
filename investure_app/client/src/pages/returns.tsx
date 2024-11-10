@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
-import { fetchTotalReturns } from '../services/api'
+import { fetchTotalReturns } from '../services/API'
+import ChartComponent from '../components/ChartComponent'
 
 interface totalReturns {
     ReferenceDate: string,
@@ -24,9 +25,7 @@ function ReturnsPage(){
 
     return (
         <div>
-                {totalReturns.map( (item) =>
-                    <p key={item.ReferenceDate}> {item.CumulativeReturn * 100}% </p>
-                )}
+            <ChartComponent ReturnsData={totalReturns} />
         </div>
     )
 

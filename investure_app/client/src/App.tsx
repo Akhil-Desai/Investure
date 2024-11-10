@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import FileUploadPage from './pages/upload'
-import ReturnsPage from './pages/returns';
+import FileUploadPage from './pages/Upload'
+import ReturnsPage from './pages/Returns';
 
 function App() {
   return (
