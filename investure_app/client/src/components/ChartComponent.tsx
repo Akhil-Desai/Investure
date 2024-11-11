@@ -57,7 +57,7 @@ function ChartComponent( {ReturnsData} : {ReturnsData: totalReturns[]} ){
 
             }],
         })
-    })
+    },[ReturnsData])
 
 
     return (
