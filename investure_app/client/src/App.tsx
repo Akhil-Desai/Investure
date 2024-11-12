@@ -9,11 +9,15 @@ function App() {
   const handleFileUploadSuccess = () => {
     setFileUploaded(true)
   }
+
+  //Fix path protection not working atm
+
+
   return (
     <Router>
         <Routes>
             <Route path='/' element={<FileUploadPage onFileUpload={handleFileUploadSuccess} />} />
-            <Route path='/protected' element={fileUploaded ? <ReturnsPage /> : <Navigate to='/' />} />
+            <Route path='/protected' element={<ReturnsPage />} />
         </Routes>
     </Router>
   )
