@@ -19,27 +19,27 @@ interface totalReturns{
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
-function ChartComponent( {ReturnsData} : {ReturnsData: totalReturns[]} ){
-    const [chartData, setChartData] = useState<{
-        labels: string[],
-        datasets: {
+interface chart {
+    labels: string[],
+    datasets: {
             label: string,
             data: number[],
             borderColor: string,
             backgroundColor: string,
             fill: boolean,
         }[]
-    }>({
+}
+
+function ChartComponent( {ReturnsData} : {ReturnsData: totalReturns[]} ){
+    const [chartData, setChartData] = useState<chart>({
         labels: [],
-        datasets: [
-        {
-            label: 'Cumulative Return',
+        datasets: [{
+            label: '',
             data: [],
-            borderColor: 'rgba(75, 192, 192, 1)',
-            backgroundColor: 'rgba(75, 192, 192, 0.2)',
-            fill: true,
-       },
-    ],
+            borderColor: '',
+            backgroundColor: '',
+            fill: false,
+        }],
     })
 
     useEffect( () => {
@@ -54,7 +54,6 @@ function ChartComponent( {ReturnsData} : {ReturnsData: totalReturns[]} ){
                 borderColor: 'rgba(75, 192, 192, 1)',
                 backgroundColor: 'rgba(75, 192, 192, 0.2)',
                 fill: true,
-
             }],
         })
     },[ReturnsData])

@@ -10,19 +10,15 @@ interface totalReturns {
 
 function ReturnsPage(){
     const [totalReturns,setTotalReturns] = useState<totalReturns[]>([])
-    const [isLoading, setIsLoading] = useState<boolean>(true);
 
     useEffect( () => {
         const handleFetch = async() => {
             try{
-                setIsLoading(true)
                 const receivedData = await fetchTotalReturns()
                 setTotalReturns(receivedData.data)
             } catch(error) {
                 console.log("error fetching data", error)
                 throw error;
-            } finally {
-                setIsLoading(false)
             }
         }
         handleFetch()
