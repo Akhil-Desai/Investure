@@ -2,6 +2,9 @@ import React, {useEffect, useState} from 'react'
 import { fetchTotalReturns } from '../services/API'
 import ChartComponent from '../components/ChartComponent'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../styles/ReturnsPage.css'
+import bg from '../assets/Cloudy Grey.jpeg'
+
 
 interface totalReturns {
     ReferenceDate: string,
@@ -25,7 +28,7 @@ function ReturnsPage(){
     }, [])
 
     return (
-        <div>
+        <div className='page-container' style={{backgroundImage: `url(${bg})`}}>
             <ChartComponent ReturnsData={totalReturns} />
         </div>
     )
