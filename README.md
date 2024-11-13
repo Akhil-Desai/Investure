@@ -70,7 +70,7 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 * ![React](https://reactjs.org/logo-og.png) [React](https://reactjs.org)
 * ![Bootstrap](https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo.svg) [Bootstrap](https://getbootstrap.com)
-* ![Express.js](https://expressjs.com/images/expressjs.png) [Express.js](https://expressjs.com)
+* ![Express.js](https://expressjs.com/images/expressjs.svg) [Express.js](https://expressjs.com)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
