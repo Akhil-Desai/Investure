@@ -47,9 +47,6 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
@@ -71,9 +68,10 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 ### Built With
 
-* [![React][React.js]
-* [![Bootstrap][Bootstrap.com]]
-* [![Express.js][expressjs.com]]
+* ![React](https://reactjs.org/logo-og.png) [React](https://reactjs.org)
+* ![Bootstrap](https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo.svg) [Bootstrap](https://getbootstrap.com)
+* ![Express.js](https://expressjs.com/images/expressjs.png) [Express.js](https://expressjs.com)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
