@@ -1,4 +1,4 @@
-import React, {useState,useEffect } from 'react'
+import React, {useState} from 'react'
 import { uploadFile } from '../services/API'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
@@ -12,27 +12,24 @@ function FileUploadPage() {
     const [file, setFile] = useState<File | null>(null)
     const navigate = useNavigate();
 
-
     const handleFileChange = (event: any) => {
-        console.log("called")
         const selectedFile = event.target.files[0]
-        console.log(selectedFile)
         setFile(selectedFile)
-
     }
 
-
-
     const handleFileUpload = async() => {
-        if (file) {
+        if (file && file.name.endsWith(".xlsx")) {
             try {
                 await uploadFile(file)
                 toast.success("File was uploaded successfully!")
-                setTimeout( () => { navigate("/returns") }, 1000)
+                setTimeout( () => { navigate('/returns') }, 1000)
             } catch (error) {
                 toast.error("Uh oh... error uploading file")
                 throw error;
             }
+        }
+        else if (file){
+            toast.error("Please upload a .xlsx file!")
         }
     }
 
@@ -60,7 +57,6 @@ function FileUploadPage() {
                         Browse
                     </label>
                 </div>
-
                 {/* File Details Section */}
                 <div className="file-details d-flex flex-column p-4 w-100 align-items-center justify-content-center">
                     {file ? (
@@ -89,7 +85,5 @@ function FileUploadPage() {
             </div>
         </div>
     );
-
 }
-
 export default FileUploadPage

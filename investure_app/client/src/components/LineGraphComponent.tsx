@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Line } from 'react-chartjs-2';
+import zoomPlugin from 'chartjs-plugin-zoom';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -17,7 +18,7 @@ interface TotalReturns {
   CumulativeReturn: number;
 }
 
-ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, zoomPlugin);
 
 interface Chart {
   labels: string[];
@@ -60,7 +61,6 @@ function ChartComponent({ ReturnsData }: { ReturnsData: TotalReturns[] }) {
         return date.toISOString().split('T')[0]
     });
     const cumulativeRets = ReturnsData.map((item) => (item.CumulativeReturn * 100));
-
 
     const avgReturn = cumulativeRets.reduce((acc, val) => acc + val, 0) / cumulativeRets.length;
     const latest = cumulativeRets[cumulativeRets.length - 1];
@@ -119,6 +119,22 @@ const chartOptions = {
         label: (context: any) => `${context.dataset.label}: ${context.raw}%`,
       },
     },
+    zoom: {
+        pan: {
+          enabled: true,
+          mode: 'xy' as const,
+          modifierKey:'alt' as const
+        },
+        zoom: {
+          wheel: {
+            enabled: true,
+          },
+          pinch: {
+            enabled: true,
+          },
+          mode: 'xy' as const,
+        },
+      },
   },
   scales: {
     x: {

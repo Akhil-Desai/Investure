@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from 'react'
 import { fetchTotalReturns } from '../services/API'
-import ChartComponent from '../components/ChartComponent'
+import LineGraph from '../components/LineGraphComponent'
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/ReturnsPage.css'
-import bg from '../assets/Cloudy Grey.jpeg'
+
 
 
 interface totalReturns {
@@ -28,8 +29,8 @@ function ReturnsPage(){
     }, [])
 
     return (
-        <div className='page-container' style={{backgroundImage: `url(${bg})`}}>
-            <ChartComponent ReturnsData={totalReturns} />
+        <div className='page-container d-flex flex-column align-items-center justify-content-center'>
+            <LineGraph ReturnsData={totalReturns} />
         </div>
     )
 
