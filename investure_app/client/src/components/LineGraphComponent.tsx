@@ -11,7 +11,7 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
-import '../styles/ChartComponent.css';  // Import the CSS file
+import '../styles/LineGraphComponent.css';  // Import the CSS file
 
 interface TotalReturns {
   ReferenceDate: string;
