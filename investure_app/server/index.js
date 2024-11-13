@@ -1,14 +1,12 @@
+//imports
 const express = require("express")
 const cors = require("cors")
-
 const fileUpload = require("express-fileupload")
 const processUploadedFile = require("./FileHandler")
 const calculateTotalReturns = require("./Calculations");
 
 const PORT = process.env.PORT || 5001;
-
 const app = express()
-
 const inMemoryDataStore = {}
 
 //Middleware setup

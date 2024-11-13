@@ -1,3 +1,4 @@
+//imports
 import React, {useState} from 'react'
 import { uploadFile } from '../services/API'
 import 'bootstrap/dist/css/bootstrap.min.css';
