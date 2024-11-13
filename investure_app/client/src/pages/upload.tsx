@@ -2,21 +2,45 @@ import React, {useState} from 'react'
 import { uploadFile } from '../services/API'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
-import backgroundImage from '../assets/BLUE.jpeg'
+import backgroundImage from '../assets/_.jpeg'
 import '../styles/UploadPage.css'
 import toast, { Toaster } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 
 
+/**
+ * The file upload page allows users to upload an Excel (.xlsx) file.
+ * After the file is successfully uploaded, the user is redirected to the `/returns` page.
+ *
+ * @component
+ */
+
 function FileUploadPage() {
     const [file, setFile] = useState<File | null>(null)
     const navigate = useNavigate();
 
+    /**
+     * Handles changes in the file input field. When the user selects a file, it updates the `file` state.
+     *
+     * @function
+     * @param {any} event - The change event triggered when a file is selected.
+     * @returns {void}
+     */
     const handleFileChange = (event: any) => {
         const selectedFile = event.target.files[0]
         setFile(selectedFile)
     }
-
+    /**
+     * Handles the file upload process. It checks if the selected file is an `.xlsx` file,
+     * uploads it, and then redirects the user to the `/returns` page.
+     *
+     * If the file is not an `.xlsx` file, an error message is shown.
+     *
+     * @async
+     * @function
+     * @returns {Promise<void>} Resolves after a successful file upload and user redirection.
+     * @throws {Error} Throws an error if the file upload fails.
+     */
     const handleFileUpload = async() => {
         if (file && file.name.endsWith(".xlsx")) {
             try {

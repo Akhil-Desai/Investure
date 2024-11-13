@@ -1,7 +1,7 @@
+//imports
 import React, {useEffect, useState} from 'react'
 import { fetchTotalReturns } from '../services/API'
 import LineGraph from '../components/LineGraphComponent'
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/ReturnsPage.css'
 
@@ -33,9 +33,6 @@ function ReturnsPage(){
             <LineGraph ReturnsData={totalReturns} />
         </div>
     )
-
-
-
 }
 
 export default ReturnsPage

@@ -11,10 +11,20 @@ const app = express()
 
 const inMemoryDataStore = {}
 
-
+//Middleware setup
 app.use(cors({origin: "http://localhost:3000"}));
 
-
+/**
+ * POST /upload
+ * Uploads a file and processes its content.
+ *
+ * @route POST /upload
+ * @middleware fileUpload - Middleware to handle file uploads with a file size limit of 10 MB.
+ * @param {Object} req.files.file - The uploaded file.
+ * @returns {Object} 200 - Success message if file uploaded and data stored.
+ * @returns {Object} 400 - Error message if no file received.
+ * @returns {Object} 500 - Error message if file processing fails.
+ */
 app.post('/upload',fileUpload({ limits: { fileSize: 10 * 1024 * 1024 } }), (req,res) => {
     try {
         if(req.files && req.files.file) {
@@ -30,6 +40,15 @@ app.post('/upload',fileUpload({ limits: { fileSize: 10 * 1024 * 1024 } }), (req,
     }
 })
 
+/**
+ * GET /getTotalReturns
+ * Retrieves the cumulative returns calculated from uploaded file data.
+ *
+ * @route GET /getTotalReturns
+ * @returns {Object} 200 - JSON object with cumulative returns if data is present.
+ * @returns {Object} 400 - Error message if there is no data to fetch.
+ * @returns {Object} 500 - Error message if an error occurs while fetching data.
+ */
 app.get('/getTotalReturns', (req, res) => {
     try{
         if(Object.keys(inMemoryDataStore).length > 0) {
@@ -45,11 +64,22 @@ app.get('/getTotalReturns', (req, res) => {
 }
 )
 
+
+/**
+ * GET /
+ * Base route to check server status.
+ *
+ * @route GET /
+ * @returns {string} 200 - Returns a message indicating the server is running.
+ */
 app.get('/', (req, res) => {
     res.send('Server is running!');
   });
 
 
+/**
+ * Starts the server and listens on the specified port.
+ */
 app.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT}`);
   });
