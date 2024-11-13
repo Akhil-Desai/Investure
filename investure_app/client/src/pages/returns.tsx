@@ -1,6 +1,11 @@
 import React, {useEffect, useState} from 'react'
 import { fetchTotalReturns } from '../services/API'
-import ChartComponent from '../components/ChartComponent'
+import LineGraph from '../components/LineGraphComponent'
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../styles/ReturnsPage.css'
+
+
 
 interface totalReturns {
     ReferenceDate: string,
@@ -24,10 +29,12 @@ function ReturnsPage(){
     }, [])
 
     return (
-        <div>
-            <ChartComponent ReturnsData={totalReturns} />
+        <div className='page-container d-flex flex-column align-items-center justify-content-center'>
+            <LineGraph ReturnsData={totalReturns} />
         </div>
     )
+
+
 
 }
 

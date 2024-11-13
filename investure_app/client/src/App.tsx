@@ -1,14 +1,14 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes} from 'react-router-dom';
 import FileUploadPage from './pages/Upload'
 import ReturnsPage from './pages/Returns';
 
 function App() {
+
   return (
     <Router>
         <Routes>
-            <Route path='/upload' element={<FileUploadPage />} />
-            <Route path='/totalReturns' element={<ReturnsPage />} />
+            <Route path='/' element={<FileUploadPage />} />
+            <Route path="/returns" element={<ReturnsPage />} />
         </Routes>
     </Router>
   )
