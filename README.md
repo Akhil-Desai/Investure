@@ -20,7 +20,7 @@
     This project ingest an excel sheet with data related to the S&P 500 daily returns according to a certain reference date and outputs a chart of the cumulative returns up to each date
     <br />
     <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
+    <a href="https://github.com/Akhil-Desai/Investure">View Demo</a>
     ·
     <a href="https://github.com/Akhil-Desai/Investure/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
