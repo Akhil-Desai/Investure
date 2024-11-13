@@ -122,8 +122,8 @@ Project Link: [https://github.com/Akhil-Desai/Investure](https://github.com/Akhi
 ## Acknowledgments
 
 * [Investure](https://www.investure.com/)
-* [Chris Wolfe]
-* [Janki McDermott]
+* Chris Wolfe
+* Janki McDermott
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
