@@ -55,37 +55,26 @@
 
 
 
-<!-- ABOUT THE PROJECT -->
-## About The Project
-
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 ### Built With
 
-* ![React](https://reactjs.org/logo-og.png) [React](https://reactjs.org)
-* ![Bootstrap](https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo.svg) [Bootstrap](https://getbootstrap.com)
-* ![Express.js](https://expressjs.com/images/expressjs.svg) [Express.js](https://expressjs.com)
+* React
+* Typescript
+* Bootstrap
+* Express
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+Instructions on how to get the project running locally.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
+Install npm if not already present
 * npm
   ```sh
   npm install npm@latest -g
@@ -93,23 +82,17 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone https://github.com/Akhil-Desai/Investure.git
    ```
-3. Install NPM packages
+3. Install NPM packages (make sure you are in the investure_app folder)
    ```sh
-   npm install
+   npm run install-all
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
-5. Change git remote url to avoid accidental pushes to base project
+3. Run the Project
    ```sh
-   git remote set-url origin github_username/repo_name
-   git remote -v # confirm the changes
+   npm run all
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
