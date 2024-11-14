@@ -6,7 +6,7 @@
   "scripts": {
     "client": "npm start --prefix client",
     "server": "node server/index.js",
-    "all": "concurrently \"npm run client\" \"npm run server\"",
+    "start": "concurrently \"npm run client\" \"npm run server\"",
     "install-all": "(npm install && cd server && npm install && cd ../client && npm install)"
   },
   "keywords": [],
