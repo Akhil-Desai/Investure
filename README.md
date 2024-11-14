@@ -17,10 +17,10 @@
 <h3 align="center">Investure 2025 Software Engineering Intern Take Home</h3>
 
   <p align="center">
-    This project ingest an excel sheet with data related to the S&P 500 daily returns according to a certain reference date and outputs a chart of the cumulative returns up to each date
+    This project ingests an excel sheet with data related to the S&P 500 daily returns according to a certain reference date and outputs a chart of the cumulative returns up to each date
     <br />
     <br />
-    <a href="https://github.com/Akhil-Desai/Investure">View Demo</a>
+    <a href="https://youtu.be/cVQAQXMT2HU">View Demo</a>
     ·
     <a href="https://github.com/Akhil-Desai/Investure/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
