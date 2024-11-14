@@ -5,12 +5,31 @@ const fileUpload = require("express-fileupload")
 const processUploadedFile = require("./FileHandler")
 const calculateTotalReturns = require("./Calculations");
 
-const PORT = process.env.PORT || 5001;
+const PORT = process.env.PORT || 8080;
 const app = express()
 const inMemoryDataStore = {}
 
+
+const allowedOrigins = [
+    "https://Akhil-Desai.github.io",
+    "https://Akhil-Desai.github.io/Investure/client",
+    "http://localhost:3000"
+  ];
+
 //Middleware setup
-app.use(cors({origin: "http://localhost:3000"}));
+app.use(cors({
+    origin: (origin, callback) => {
+      if (allowedOrigins.includes(origin) || !origin) {
+        // Allow requests with no origin (e.g., mobile apps or curl requests)
+        callback(null, true);
+      } else {
+        // Deny requests from other origins
+        callback(new Error('Not allowed by CORS'), false);
+      }
+    },
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],  // Allowed HTTP methods
+    credentials: true  // Allow cookies or credentials to be sent
+  }));
 
 /**
  * POST /upload
