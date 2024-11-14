@@ -11,8 +11,7 @@ const inMemoryDataStore = {}
 
 
 const allowedOrigins = [
-    "https://Akhil-Desai.github.io",
-    "https://Akhil-Desai.github.io/Investure/client",
+    "https://investure-rhl916w6w-akhil-desais-projects.vercel.app/",
     "http://localhost:3000"
   ];
 
